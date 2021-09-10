@@ -1,12 +1,12 @@
 import argparse
 
 
-def get_args()
+def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
             '--root',
             type=str,
-            default='dataset/gtzan/genres_original'
+            default='dataset/gtzan/genres_original',
             required=False,
             help='Database directory')
     parser.add_argument(
