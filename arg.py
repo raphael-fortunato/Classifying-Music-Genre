@@ -9,17 +9,8 @@ from args import get_args
 
 
 def get_dataset(args):
-
-    # Create the function that will transform our audio to mel_spectograms. 
-    # We will pass this to the dataset class.
-    mel_spectograms = torchaudio.transforms.mel_spectograms(
-        sample_rate = SAMPLE_RATE,
-        n_fft       = 1024,
-        hop_length  = 512,
-        n_mels      = 64)
-    
-    train_dataset = MusicDataset(args.root, mel_spectograms)
-    valid_dataset = MusicDataset(args.root, mel_spectograms)
+    train_dataset = MusicDataset(args.root)
+    valid_dataset = MusicDataset(args.root)
     num_train = .9
     len_dataset = len(train_dataset)
     indices = list(range(len_dataset))
@@ -49,6 +40,9 @@ if __name__ == '__main__':
     torch.manual_seed(args.seed)
     datasets = get_dataset(args)
 
-    # Print what device we will be training in
+    
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device: ", device)
+
+
+
