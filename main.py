@@ -11,5 +11,7 @@ if __name__ == '__main__':
     dataset = MusicDataset('dataset/gtzan/genres_original')
     print(len(dataset))
 
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print("Using device: ", device)
 
 
