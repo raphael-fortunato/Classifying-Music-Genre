@@ -54,14 +54,15 @@ def collate_fn(batch):
 
 # create dataloaders to train CNN
 def get_dataset(args):
+    # load dataset
     train_dataset = MusicDataset(args.root)
     valid_dataset = MusicDataset(args.root)
 
+    # Split dataset in validation and train dataset using sampler
     len_dataset = len(train_dataset)
     indices = list(range(len_dataset))
     split = int(np.floor(.9 * len_dataset))
     np.random.shuffle(indices)
-
     train_idx, valid_idx = indices[split:], indices[:split]
     train_sampler = torch.utils.data.SubsetRandomSampler(train_idx)
     valid_sampler = torch.utils.data.SubsetRandomSampler(valid_idx)
@@ -74,4 +75,5 @@ def get_dataset(args):
         valid_dataset, batch_size=args.batch_size, sampler=valid_sampler,
         collate_fn=collate_fn, num_workers=args.num_workers)
 
+    # return dataloaders in dict
     return {'train': train_loader, 'valid':valid_loader}
