@@ -5,8 +5,8 @@ import torchaudio
 from torch.utils.data import Dataset
 import torchaudio
 
-class MusicDataset(Dataset, transform=None):
-    def __init__(self, root):
+class MusicDataset(Dataset):
+    def __init__(self, root, transform=None):
         super().__init__()
         self.root = root
         self.data = []
@@ -29,8 +29,8 @@ class MusicDataset(Dataset, transform=None):
     def __getitem__(self, i):
         fname = self.data[i]
         audio = torchaudio.load(fname)[0]
-        if transform: 
-            audio = transform(audio)
+        if self.transform: 
+            audio = self.transform(audio)
         class_idx = self.labels[i]
         return audio, class_idx
 
