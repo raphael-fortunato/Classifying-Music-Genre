@@ -16,9 +16,15 @@ def get_args():
             required=False,
             help='set random seed')
     parser.add_argument(
+            '--epochs',
+            type=int,
+            default=10,
+            required=False,
+            help='number of epochs')
+    parser.add_argument(
             '--batch_size',
             type=int,
-            default=1,
+            default=32,
             required=False,
             help='Batch size')
     parser.add_argument(
