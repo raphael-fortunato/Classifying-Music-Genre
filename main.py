@@ -2,6 +2,7 @@ from copy import deepcopy
 import time
 import numpy as np
 import torch
+import torchaudio
 
 from dataset import get_dataset
 from args import get_args
@@ -46,11 +47,9 @@ def train(dataloader, model, optim, criterion, args, device):
                 running_corrects = torch.sum(preds == labels.data)
             epoch_loss = running_loss / len(dataloader[phase].dataset)
             epoch_acc = running_corrects.double() / dataloader[phase].dataset
-
             print('{} Loss: {:.4f} Acc: {:.4f}'.format(
                 phase, epoch_loss, epoch_acc))
-
-                        # deep copy the model
+                # deep copy the model
             if phase == 'val' and epoch_acc > best_acc:
                 best_acc = epoch_acc
                 best_model_wts = copy.deepcopy(model.state_dict())

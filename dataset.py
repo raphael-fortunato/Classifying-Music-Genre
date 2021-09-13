@@ -57,9 +57,16 @@ def collate_fn(batch):
 
 # create dataloaders to train CNN
 def get_dataset(args):
+    # Create the function that will transform our audio to mel_spectograms. 
+    # We will pass this to the dataset class.
+    mel_spectrograms = torchaudio.transforms.MelSpectrogram(
+        n_fft       = 1024,
+        hop_length  = 512,
+        n_mels      = 64)
+    
     # load dataset
-    train_dataset = MusicDataset(args.root)
-    valid_dataset = MusicDataset(args.root)
+    train_dataset = MusicDataset(args.root, transform=mel_spectrograms)
+    valid_dataset = MusicDataset(args.root, transform=mel_spectrograms)
 
     # Split dataset in validation and train dataset using sampler
     len_dataset = len(train_dataset)
