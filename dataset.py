@@ -4,6 +4,7 @@ import torch
 import torchaudio
 from torch.utils.data import Dataset
 import torchaudio
+from torchvision import transforms
 
 class MusicDataset(Dataset):
     def __init__(self, root, transform=None):
@@ -34,6 +35,14 @@ class MusicDataset(Dataset):
         class_idx = self.labels[i]
         return audio, class_idx
 
+def get_transforms(args):
+    transform = transforms.Compose(
+            [transforms.ToTensor(),
+             transforms.Resize(432, 288)
+                ])
+    return transform
+
+
 # padding audio files to ensure equal length
 def pad_sequence(batch):
     # Make all tensor in a batch the same length by padding with zeros
@@ -57,16 +66,9 @@ def collate_fn(batch):
 
 # create dataloaders to train CNN
 def get_dataset(args):
-    # Create the function that will transform our audio to mel_spectograms. 
-    # We will pass this to the dataset class.
-    mel_spectrograms = torchaudio.transforms.MelSpectrogram(
-        n_fft       = 1024,
-        hop_length  = 512,
-        n_mels      = 64)
-    
     # load dataset
-    train_dataset = MusicDataset(args.root, transform=mel_spectrograms)
-    valid_dataset = MusicDataset(args.root, transform=mel_spectrograms)
+    train_dataset = MusicDataset(args.root, transform=get_transforms(args))
+    valid_dataset = MusicDataset(args.root, transform=get_transforms(args))
 
     # Split dataset in validation and train dataset using sampler
     len_dataset = len(train_dataset)
