@@ -1,4 +1,5 @@
 import copy 
+import math
 import time
 import numpy as np
 import torch
@@ -31,16 +32,16 @@ def train(dataloader, model, optim, criterion, args, device):
                 optim.zero_grad()
 
                 # set grad if training
-                with torch.set_grad_enabled(phase == 'train'):
-                    # generate output
-                    outputs = model(inputs) 
-                    _, preds = torch.max(outputs, 1)
-                    # calculate loss
-                    import pdb; pdb.set_trace()
-                    loss = criterion(outputs, labels)
-                    # update model
-                    loss.backward()
-                    optim.step()
+                #with torch.set_grad_enabled(phase == 'train'):
+                # generate output
+                outputs = model(inputs) 
+                _, preds = torch.max(outputs, 1)
+                # calculate loss
+                loss = criterion(outputs, labels)
+                # update model
+
+                loss.backward()
+                optim.step()
                 # if loss is infinite end training
                 if not math.isfinite(loss):
                     print("Loss is {}, stopping training".format(loss))
@@ -48,7 +49,7 @@ def train(dataloader, model, optim, criterion, args, device):
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects = torch.sum(preds == labels.data)
             epoch_loss = running_loss / len(dataloader[phase].dataset)
-            epoch_acc = running_corrects.double() / dataloader[phase].dataset
+            epoch_acc = running_corrects.double() / len(dataloader[phase].dataset)
             print('{} Loss: {:.4f} Acc: {:.4f}'.format(
                 phase, epoch_loss, epoch_acc))
                 # deep copy the model

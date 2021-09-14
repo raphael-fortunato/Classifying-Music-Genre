@@ -16,7 +16,7 @@ class GenreClassifier(nn.Module):
             nn.BatchNorm1d(256),
             nn.LeakyReLU(0.2, inplace=True),
         )
-        self.Fully_Conn = nn.Sequential(nn.Linear(512, num_classes), nn.Softmax())
+        self.Fully_Conn = nn.Sequential(nn.Linear(5376, num_classes), nn.Softmax())
 
     def __call__(self, tensor):
         batch_size = tensor.size(0)
