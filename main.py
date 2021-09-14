@@ -8,7 +8,6 @@ from dataset import get_dataset
 from model import GenreClassifier
 import numpy as np
 import torch
-import torchvision
 
 def train(dataloader, model, optim, criterion, args, device):
     since = time.time()
@@ -86,5 +85,7 @@ if __name__ == '__main__':
     model.to(device)
     optimizer = torch.optim.Adam(model.parameters())
     criterion = torch.nn.CrossEntropyLoss()
-    train(dataloaders, model, optimizer, criterion, args, device)
+    model = train(dataloaders, model, optimizer, criterion, args, device)
+    torch.save(model, f"models/model{time.time()}.pt")
+
 
