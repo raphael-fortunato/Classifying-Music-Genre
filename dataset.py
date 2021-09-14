@@ -1,4 +1,5 @@
 import os
+import cv2
 import numpy as np
 import torch
 import torchaudio
@@ -29,46 +30,26 @@ class MusicDataset(Dataset):
 
     def __getitem__(self, i):
         fname = self.data[i]
-        audio = torchaudio.load(fname)[0]
+        audio = cv2.imread(fname)
         if self.transform: 
             audio = self.transform(audio)
         class_idx = self.labels[i]
         return audio, class_idx
 
-def get_transforms(args):
+def get_transforms():
     transform = transforms.Compose(
             [transforms.ToTensor(),
-             transforms.Resize(432, 288)
+             transforms.Resize((432, 288))
                 ])
     return transform
 
 
 # padding audio files to ensure equal length
-def pad_sequence(batch):
-    # Make all tensor in a batch the same length by padding with zeros
-    batch = [item.squeeze().t() for item in batch]
-    batch = torch.nn.utils.rnn.pad_sequence(batch, batch_first=True, padding_value=0.)
-    return batch.permute(0, 2, 1)
-
-# used to create test/train batches
-def collate_fn(batch):
-    # A data tuple has the form:
-    # waveform, sample_rate, label, speaker_id, utterance_number
-    tensors, targets = [], []
-    # Gather in lists, and encode labels as indices
-    for waveform, label in batch:
-        tensors += [waveform]
-        targets += [torch.tensor(label)]
-    # Group the list of tensors into a batched tensor
-    tensors = pad_sequence(tensors)
-    targets = torch.stack(targets)
-    return tensors, targets
-
 # create dataloaders to train CNN
 def get_dataset(args):
     # load dataset
-    train_dataset = MusicDataset(args.root, transform=get_transforms(args))
-    valid_dataset = MusicDataset(args.root, transform=get_transforms(args))
+    train_dataset = MusicDataset(args.root, transform=get_transforms())
+    valid_dataset = MusicDataset(args.root, transform=get_transforms())
 
     # Split dataset in validation and train dataset using sampler
     len_dataset = len(train_dataset)
@@ -82,10 +63,10 @@ def get_dataset(args):
     # load dataset
     train_loader = torch.utils.data.DataLoader(
         train_dataset, batch_size=args.batch_size, sampler=train_sampler,
-        collate_fn=collate_fn, num_workers=args.num_workers)
+        num_workers=args.num_workers)
     valid_loader = torch.utils.data.DataLoader(
         valid_dataset, batch_size=args.batch_size, sampler=valid_sampler,
-        collate_fn=collate_fn, num_workers=args.num_workers)
+        num_workers=args.num_workers)
 
     # return dataloaders in dict
     return {'train': train_loader, 'valid':valid_loader}
