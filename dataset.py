@@ -34,7 +34,7 @@ class MusicDataset(Dataset):
         if self.transform: 
             audio = self.transform(audio)
         class_idx = self.labels[i]
-        return audio, class_idx
+        return audio.unsqueeze(0), class_idx
 
 def get_transforms():
     transform = transforms.Compose(

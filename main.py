@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+import copy 
+=======
 import sys
 import copy
+>>>>>>> 8eba038012dbe85431e8538bf49ad1ecee57801e
 import math
 import time
 
@@ -49,7 +53,7 @@ def train(dataloader, model, optim, criterion, args, device):
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects = torch.sum(preds == labels.data)
             epoch_loss = running_loss / len(dataloader[phase].dataset)
-            epoch_acc = running_corrects.double() / dataloader[phase].dataset
+            epoch_acc = running_corrects.double() / len(dataloader[phase].dataset)
             print('{} Loss: {:.4f} Acc: {:.4f}'.format(
                 phase, epoch_loss, epoch_acc))
                 # deep copy the model
