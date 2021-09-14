@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import copy 
-=======
 import sys
 import copy
->>>>>>> 8eba038012dbe85431e8538bf49ad1ecee57801e
 import math
 import time
 
