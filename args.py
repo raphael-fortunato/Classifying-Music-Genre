@@ -6,7 +6,7 @@ def get_args():
     parser.add_argument(
             '--root',
             type=str,
-            default='dataset/gtzan/genres_original',
+            default='dataset/gtzan/images_original',
             required=False,
             help='Database directory')
     parser.add_argument(

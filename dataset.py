@@ -18,7 +18,7 @@ class MusicDataset(Dataset):
                 self.classes = dir_names
             for f in files:
                 full_path = os.path.join(path, f)
-                label = self.classes.index(f.split('.')[0])
+                label = self.classes.index(f.split('0')[0])
                 self.labels.append(label)
                 self.data.append(full_path)
 
