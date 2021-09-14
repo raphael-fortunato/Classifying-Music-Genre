@@ -1,13 +1,18 @@
+<<<<<<< HEAD
 import copy 
+=======
+import sys
+import copy
+>>>>>>> 8eba038012dbe85431e8538bf49ad1ecee57801e
 import math
 import time
+
+from args import get_args
+from dataset import get_dataset
+from model import GenreClassifier
 import numpy as np
 import torch
-import torchaudio
-
-from dataset import get_dataset
-from args import get_args
-from model import GenreClassifier
+import torchvision
 
 def train(dataloader, model, optim, criterion, args, device):
     since = time.time()
@@ -32,16 +37,15 @@ def train(dataloader, model, optim, criterion, args, device):
                 optim.zero_grad()
 
                 # set grad if training
-                #with torch.set_grad_enabled(phase == 'train'):
-                # generate output
-                outputs = model(inputs) 
-                _, preds = torch.max(outputs, 1)
-                # calculate loss
-                loss = criterion(outputs, labels)
-                # update model
-
-                loss.backward()
-                optim.step()
+                with torch.set_grad_enabled(phase == 'train'):
+                    # generate output
+                    outputs = model(inputs) 
+                    _, preds = torch.max(outputs, 1)
+                    # calculate loss
+                    loss = criterion(outputs, labels)
+                    # update model
+                    loss.backward()
+                    optim.step()
                 # if loss is infinite end training
                 if not math.isfinite(loss):
                     print("Loss is {}, stopping training".format(loss))
@@ -82,6 +86,7 @@ if __name__ == '__main__':
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device: ", device)
     model = GenreClassifier(10)
+
     model.to(device)
     optimizer = torch.optim.Adam(model.parameters())
     criterion = torch.nn.CrossEntropyLoss()
