@@ -24,7 +24,7 @@ def get_args():
     parser.add_argument(
             '--batch_size',
             type=int,
-            default=4,
+            default=16,
             required=False,
             help='Batch size')
     parser.add_argument(

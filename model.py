@@ -1,4 +1,6 @@
 import torch.nn as nn
+import torchvision.models as models
+
 
 class GenreClassifier(nn.Module):
     def __init__(self, num_classes):
@@ -21,3 +23,15 @@ class GenreClassifier(nn.Module):
         batch_size = tensor.size(0)
         hidden = self.CNN_Block(tensor)
         return self.Fully_Conn(hidden.view(batch_size, -1))
+
+
+class ResNet(nn.Module):
+    def __init__(self, num_classes, pretrained=False):
+        super(ResNet, self).__init__()
+        self.model = models.resnet18(pretrained)
+        num_ftrs = self.model.fc.in_features
+        self.model.fc = nn.Linear(num_ftrs, num_classes)
+		
+    def forward(self, x):
+        output = self.model(x)
+        return output

@@ -2,12 +2,12 @@ import sys
 import copy
 import math
 import time
+import numpy as np
+import torch
 
 from args import get_args
 from dataset import get_dataset
-from model import GenreClassifier
-import numpy as np
-import torch
+from model import GenreClassifier, ResNet
 
 def train(dataloader, model, optim, criterion, args, device):
     since = time.time()
@@ -39,8 +39,9 @@ def train(dataloader, model, optim, criterion, args, device):
                     # calculate loss
                     loss = criterion(outputs, labels)
                     # update model
-                    loss.backward()
-                    optim.step()
+                    if phase == 'train':
+                        loss.backward()
+                        optim.step()
                 # if loss is infinite end training
                 if not math.isfinite(loss):
                     print("Loss is {}, stopping training".format(loss))
@@ -80,10 +81,10 @@ if __name__ == '__main__':
     # set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device: ", device)
-    model = GenreClassifier(10)
+    model = ResNet(10)
 
     model.to(device)
-    optimizer = torch.optim.Adam(model.parameters())
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.001)
     criterion = torch.nn.CrossEntropyLoss()
     model = train(dataloaders, model, optimizer, criterion, args, device)
     torch.save(model, f"models/model{time.time()}.pt")

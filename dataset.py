@@ -1,8 +1,8 @@
 import os
+
 import cv2
 import numpy as np
 import torch
-import torchaudio
 from torch.utils.data import Dataset
 import torchaudio
 from torchvision import transforms
@@ -34,7 +34,7 @@ class MusicDataset(Dataset):
         if self.transform: 
             audio = self.transform(audio)
         class_idx = self.labels[i]
-        return audio.unsqueeze(0), class_idx
+        return audio, class_idx
 
 def get_transforms():
     transform = transforms.Compose(
