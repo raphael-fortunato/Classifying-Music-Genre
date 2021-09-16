@@ -6,7 +6,7 @@ def get_args():
     parser.add_argument(
             '--root',
             type=str,
-            default='dataset/gtzan/images_original',
+            default='SplitDataset/Spectrograms',
             required=False,
             help='Database directory')
     parser.add_argument(
@@ -24,7 +24,7 @@ def get_args():
     parser.add_argument(
             '--batch_size',
             type=int,
-            default=16,
+            default=64,
             required=False,
             help='Batch size')
     parser.add_argument(
