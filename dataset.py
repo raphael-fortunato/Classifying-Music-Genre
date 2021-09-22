@@ -35,11 +35,25 @@ class MusicDataset(Dataset):
         class_idx = self.labels[i]
         return audio, class_idx
 
-def get_transforms():
-    transform = transforms.Compose(
-            [transforms.ToTensor(),
-             transforms.Resize((128, 128))
-                ])
+def get_transforms(train=True):
+    if train:
+        transform = transforms.Compose(
+                [transforms.ToTensor(),
+                 transforms.Resize((128, 128)),
+                 transforms.RandomHorizontalFlip(p=.5),
+                 transforms.RandomVerticalFlip(p=.5),
+                 transforms.Normalize(
+                    [0.485, 0.456, 0.406],
+                    [0.229, 0.224, 0.225])
+                    ])
+    else:
+        transform = transforms.Compose(
+                [transforms.ToTensor(),
+                 transforms.Resize((128, 128)),
+                 transforms.Normalize(
+                    [0.485, 0.456, 0.406],
+                    [0.229, 0.224, 0.225])
+                    ])
     return transform
 
 
@@ -48,7 +62,7 @@ def get_transforms():
 def get_dataset(args):
     # load dataset
     train_dataset = MusicDataset(args.root+"/train", transform=get_transforms())
-    valid_dataset = MusicDataset(args.root+"/test", transform=get_transforms())
+    valid_dataset = MusicDataset(args.root+"/test", transform=get_transforms(train=False))
 
     # load dataset
     train_loader = torch.utils.data.DataLoader(

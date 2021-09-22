@@ -72,10 +72,10 @@ def SplitAudioFiles():
                 song        = AudioSegment.from_wav(song_name)
 
                 # Clip 3 seconds excerpts
-                for x in range(10):
+                for x in range(6):
 
                     # Clip information
-                    clip_length     = (int(song.duration_seconds) / 10)*1000
+                    clip_length     = (int(song.duration_seconds) / 6)*1000
                     clip            = song[x*clip_length: (x+1)*clip_length]
                     songName        = "_".join(song_name.split('/')[-1].split('.')[0:2]) + "_"
                     song_path       = f"./SplitDataset/Audio/{stage}/{genre}/{songName}{x}.wav"

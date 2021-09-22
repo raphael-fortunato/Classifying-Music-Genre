@@ -7,7 +7,7 @@ import torch
 
 from args import get_args
 from dataset import get_dataset
-from model import GenreClassifier, ResNet
+from model import AudioModel, ResNet
 
 def train(dataloader, model, optim, criterion, args, device):
     since = time.time()
@@ -47,7 +47,7 @@ def train(dataloader, model, optim, criterion, args, device):
                     print("Loss is {}, stopping training".format(loss))
                     sys.exit(1)
                 running_loss += loss.item() * inputs.size(0)
-                running_corrects = torch.sum(preds == labels.data)
+                running_corrects += torch.sum(preds == labels.data)
             epoch_loss = running_loss / len(dataloader[phase].dataset)
             epoch_acc = running_corrects.double() / len(dataloader[phase].dataset)
             print('{} Loss: {:.4f} Acc: {:.4f}'.format(
@@ -81,7 +81,7 @@ if __name__ == '__main__':
     # set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device: ", device)
-    model = ResNet(10)
+    model = AudioModel(args)
 
     model.to(device)
     optimizer = torch.optim.SGD(model.parameters(), lr=0.001)
@@ -89,4 +89,7 @@ if __name__ == '__main__':
     model = train(dataloaders, model, optimizer, criterion, args, device)
     torch.save(model, f"models/model{time.time()}.pt")
 
+
+        
+        
 

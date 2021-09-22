@@ -33,5 +33,17 @@ def get_args():
             default=4,
             required=False,
             help='number of workser')
+    parser.add_argument(
+            '--num_classes',
+            type=int,
+            default=10,
+            required=False,
+            help='number of workser')
+    parser.add_argument(
+            '--img_shape',
+            type=int,
+            default=128,
+            required=False,
+            help='number of workser')
     return parser.parse_args()
 
