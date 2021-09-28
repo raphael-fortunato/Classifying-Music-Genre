@@ -86,5 +86,16 @@ if __name__ == '__main__':
     model.to(device)
     optimizer = torch.optim.Adam(model.parameters())
     criterion = torch.nn.CrossEntropyLoss()
-    train(dataloaders, model, optimizer, criterion, args, device)
+    model = train(dataloaders, model, optimizer, criterion, args, device)
+
+
+    # Create a iris classifier service instance
+    genre_classifier = GenreClassification()
+
+    # Pack the newly trained model artifact
+    genre_classifier .pack('model', model)
+
+    # Save the prediction service to disk for model serving
+    saved_path =iris_classifier_service.save()
+    print('packaged model saved at: ', saved_path)
 
