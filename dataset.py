@@ -1,71 +1,89 @@
 import os
-import cv2
 import numpy as np
+import json
 import torch
-import torchaudio
 from torch.utils.data import Dataset
 import torchaudio
 from torchvision import transforms
+from sklearn.preprocessing import MinMaxScaler
 
 class MusicDataset(Dataset):
-    def __init__(self, root, transform=None):
+    def __init__(self, X, Y, args, transform=None):
         super().__init__()
-        self.root = root
-        self.data = []
-        self.labels = []
-        self.classes = []
+        self.data = X
+        self.labels = Y
+        self.class_names = os.listdir(args.root+"/train")
         self.transform = transform
-        for path, dir_names, files in os.walk(root):
-            if not self.classes:
-                self.classes = dir_names
-            for f in files:
-                full_path = os.path.join(path, f)
-                label = self.classes.index(f.split('0')[0])
-                self.labels.append(label)
-                self.data.append(full_path)
 
 
     def __len__(self):
         return len(self.data)
 
     def __getitem__(self, i):
-        fname = self.data[i]
-        audio = cv2.imread(fname)
+        audio = self.data[i].unsqueeze(0)
         if self.transform: 
             audio = self.transform(audio)
         class_idx = self.labels[i]
-        return audio.unsqueeze(0), class_idx
+        return audio, class_idx
 
-def get_transforms():
-    transform = transforms.Compose(
-            [transforms.ToTensor(),
-             transforms.Resize((432, 288))
-                ])
+def get_transforms(train=True):
+    if train:
+        transform = transforms.Compose(
+                [transforms.ToTensor(),
+                 transforms.Resize((128, 128)),
+                 transforms.RandomHorizontalFlip(p=.5),
+                 transforms.RandomVerticalFlip(p=.5),
+                 transforms.Normalize(
+                    [0.485, 0.456, 0.406],
+                    [0.229, 0.224, 0.225])
+                    ])
+    else:
+        transform = transforms.Compose(
+                [transforms.ToTensor(),
+                 transforms.Resize((128, 128)),
+                 transforms.Normalize(
+                    [0.485, 0.456, 0.406],
+                    [0.229, 0.224, 0.225])
+                    ])
     return transform
 
+
+# loading data from json file
+def load_data(data_path):
+    """Loads training dataset from json file.
+        :param data_path (str): Path to json file containing data
+        :return X (ndarray): Inputs
+        :return y (ndarray): Targets
+    """
+    with open(data_path, "r") as fp:
+        data = json.load(fp)
+
+    X = torch.tensor(data["mfcc"])
+    y = torch.tensor(data["labels"])
+    z = np.array(data['mapping'])
+    return X, y, z
 
 # padding audio files to ensure equal length
 # create dataloaders to train CNN
 def get_dataset(args):
+    X_train, Y_train, _ = load_data("train.json")
+    X_test, Y_test, _ = load_data("test.json")
+    max = X_train.max()
+    min = X_train.min()
+    X_std = (X_train - min) / (max - min)
+    X_train = X_std * (1 - -1)  -1
+    X_std = (X_test - min) / (max - min)
+    X_test = X_std * (1 - -1)  -1
     # load dataset
-    train_dataset = MusicDataset(args.root, transform=get_transforms())
-    valid_dataset = MusicDataset(args.root, transform=get_transforms())
-
-    # Split dataset in validation and train dataset using sampler
-    len_dataset = len(train_dataset)
-    indices = list(range(len_dataset))
-    split = int(np.floor(.9 * len_dataset))
-    np.random.shuffle(indices)
-    train_idx, valid_idx = indices[split:], indices[:split]
-    train_sampler = torch.utils.data.SubsetRandomSampler(train_idx)
-    valid_sampler = torch.utils.data.SubsetRandomSampler(valid_idx)
+    train_dataset = MusicDataset(X_train, Y_train, args, transform=None)
+    valid_dataset = MusicDataset(X_test, Y_test, args, transform=None)
 
     # load dataset
     train_loader = torch.utils.data.DataLoader(
-        train_dataset, batch_size=args.batch_size, sampler=train_sampler,
+        train_dataset, batch_size=args.batch_size,
         num_workers=args.num_workers)
     valid_loader = torch.utils.data.DataLoader(
-        valid_dataset, batch_size=args.batch_size, sampler=valid_sampler,
+        valid_dataset, batch_size=args.batch_size,
         num_workers=args.num_workers)
 
     # return dataloaders in dict
