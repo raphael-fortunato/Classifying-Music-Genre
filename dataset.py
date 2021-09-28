@@ -1,16 +1,18 @@
+import os
 import numpy as np
 import json
 import torch
 from torch.utils.data import Dataset
 import torchaudio
 from torchvision import transforms
+from sklearn.preprocessing import MinMaxScaler
 
 class MusicDataset(Dataset):
-    def __init__(self, X, Y, transform=None):
+    def __init__(self, X, Y, args, transform=None):
         super().__init__()
         self.data = X
         self.labels = Y
-        self.classes = []
+        self.class_names = os.listdir(args.root+"/train")
         self.transform = transform
 
 
@@ -66,12 +68,15 @@ def load_data(data_path):
 def get_dataset(args):
     X_train, Y_train, _ = load_data("train.json")
     X_test, Y_test, _ = load_data("test.json")
-    max = X_train.min()
-    X_train /= max
-    X_test /= max
+    max = X_train.max()
+    min = X_train.min()
+    X_std = (X_train - min) / (max - min)
+    X_train = X_std * (1 - -1)  -1
+    X_std = (X_test - min) / (max - min)
+    X_test = X_std * (1 - -1)  -1
     # load dataset
-    train_dataset = MusicDataset(X_train, Y_train, transform=None)
-    valid_dataset = MusicDataset(X_test, Y_test, transform=None)
+    train_dataset = MusicDataset(X_train, Y_train, args, transform=None)
+    valid_dataset = MusicDataset(X_test, Y_test, args, transform=None)
 
     # load dataset
     train_loader = torch.utils.data.DataLoader(

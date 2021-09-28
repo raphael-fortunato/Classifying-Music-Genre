@@ -18,7 +18,7 @@ def get_args():
     parser.add_argument(
             '--epochs',
             type=int,
-            default=50,
+            default=100,
             required=False,
             help='number of epochs')
     parser.add_argument(
