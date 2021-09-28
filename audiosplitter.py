@@ -1,7 +1,8 @@
 import os
-import time
+import json
 import shutil
 import numpy as np
+import math
 from pydub import AudioSegment
 import matplotlib.pyplot as plt
 import librosa
@@ -9,8 +10,18 @@ import skimage.io
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 # Get the genres from the dataset
-folder_name = "./dataset/gtzan/genres_original"
-genres      = [name for name in os.listdir(folder_name) if os.path.isdir(os.path.join(folder_name, name))]
+FOLDER = "./dataset/gtzan/genres_original"
+GENRES      = [name for name in os.listdir(FOLDER) if os.path.isdir(os.path.join(FOLDER, name))]
+NUM_SEGMENTS = 5
+SAMPLE_RATE = 22050
+TRACK_DUR = 30
+SAMPLES_PER_TRACK = SAMPLE_RATE * TRACK_DUR
+SAMPLES_PER_SEGMENT = int(SAMPLES_PER_TRACK / NUM_SEGMENTS)
+HOP_LENGTH = 512
+N_FTT = 2048
+NUM_MFCC = 13
+
+
 
 # Make a new directory where we store the new files
 def CreateNewRepositories():
@@ -25,7 +36,7 @@ def CreateNewRepositories():
     os.mkdir('./SplitDataset/Spectrograms/train/')
 
     
-    for genre in genres:
+    for genre in GENRES:
         os.mkdir('./SplitDataset/Audio/test/'+genre)
         os.mkdir('./SplitDataset/Audio/train/'+genre)
         os.mkdir('./SplitDataset/Spectrograms/test/'+genre)
@@ -35,9 +46,9 @@ def CreateNewRepositories():
     
 def SplitTestTrain():
     #Iterate over each genre in the dataset file
-    for genre in genres:
+    for genre in GENRES:
         # Iterate over each file inside of the genre
-        genre_folder    = os.path.join(folder_name,genre)
+        genre_folder    = os.path.join(FOLDER,genre)
         song_list       = os.listdir(genre_folder)
         np.random.shuffle(song_list)
         training_set    = song_list[0: int(.8* len(song_list))]
@@ -58,56 +69,58 @@ def SplitAudioFiles():
     # traing and test iteration
     for stage in ['train', 'test']:
             
-        working_folder = f'./SplitDataset/Audio/{stage}/'
-        #Iterate over each genre in the dataset file
-        for genre in genres:
+         # dictionary to store mapping, labels, and MFCCs
+        data = {
+            "mapping": [],
+            "labels": [],
+            "mfcc": []
+        }
 
-            # Iterate over each file inside of the genre
-            genre_folder    = os.path.join(working_folder,genre)
-            song_list       = os.listdir(genre_folder)
-            for filename in song_list:            
+        samples_per_segment = int(SAMPLES_PER_TRACK / NUM_SEGMENTS)
+        NUM_MFCC_vectors_per_segment = math.ceil(samples_per_segment / HOP_LENGTH)
+         
+        json_path = stage+".json"
+        dataset_path = "SplitDataset/Audio/"+stage
 
-                # Get the song
-                song_name   = os.path.join(genre_folder,filename)
-                song        = AudioSegment.from_wav(song_name)
+        # loop through all genre sub-folder
+        for i, (dirpath, _, filenames) in enumerate(os.walk(dataset_path)):
 
-                # Clip 3 seconds excerpts
-                for x in range(6):
+            # ensure we're processing a genre sub-folder level
+            if dirpath is not dataset_path:
 
-                    # Clip information
-                    clip_length     = (int(song.duration_seconds) / 6)*1000
-                    clip            = song[x*clip_length: (x+1)*clip_length]
-                    songName        = "_".join(song_name.split('/')[-1].split('.')[0:2]) + "_"
-                    song_path       = f"./SplitDataset/Audio/{stage}/{genre}/{songName}{x}.wav"
-                    if os.path.isfile(song_path):
-                        print("file exists")
-                        continue
-                    # Export our newly made clip
-                    clip.export(song_path, format='wav')
+                # save genre label (i.e., sub-folder name) in the mapping
+                semantic_label = dirpath.split("/")[-1]
+                data["mapping"].append(semantic_label)
+                print("\nProcessing: {}".format(semantic_label))
 
-                    print("Saved: ", songName, x, end=" ")
-                    print()
-                    # Load it in again to make a specotogram
-                    start = time.time()
-                    y,sr = librosa.load(song_path,duration=3)
-                    mels = librosa.feature.melspectrogram(y=y,sr=sr)
-                    mels = np.log(mels + 1e-9) # add small number to avoid log(0)
+                # process all audio files in genre sub-dir
+                for f in filenames:
 
-                    # min-max scale to fit inside 8-bit range
-                    img = scale_minmax(mels, 0, 255).astype(np.uint8)
-                    img = np.flip(img, axis=0) # put low frequencies at the bottom in image
-                    img = 255-img # invert. make black==more energy
+                    # load audio file
+                    file_path = os.path.join(dirpath, f)
+                    signal, sample_rate = librosa.load(file_path, sr=SAMPLE_RATE)
+                
+                
+                    # process all segments of audio file
+                    for d in range(NUM_SEGMENTS):
 
-                    # save as PNG
-                    skimage.io.imsave(f"./SplitDataset/Spectrograms/{stage}/{genre}/{songName}{x}.png",
-                            img)
-                    time_elapsed = time.time() - start
-                    print('completed in {:.0f}m {:.0f}s'.format(
-                        time_elapsed // 60, time_elapsed % 60))
-                        
+                        # calculate start and finish sample for current segment
+                        start = samples_per_segment * d
+                        finish = start + samples_per_segment
 
-        print(" ")
-        print("Done with genre: ", genre)
+                        # extract mfcc
+                        mfcc = librosa.feature.mfcc(signal[start:finish], sample_rate, n_mfcc=NUM_MFCC, n_fft=N_FTT, hop_length=HOP_LENGTH)
+                        mfcc = mfcc.T
+
+                        # store only mfcc feature with expected number of vectors
+                        if len(mfcc) == NUM_MFCC_vectors_per_segment:
+                            data["mfcc"].append(mfcc.tolist())
+                            data["labels"].append(i-1)
+                            print("{}, segment:{}".format(file_path, d+1))
+
+        # save MFCCs to json file
+        with open(json_path, "w") as fp:
+            json.dump(data, fp, indent=4)
 
 
 if __name__ == '__main__':

@@ -84,12 +84,8 @@ if __name__ == '__main__':
     model = AudioModel(args)
 
     model.to(device)
-    optimizer = torch.optim.SGD(model.parameters(), lr=0.001)
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.001, weight_decay=0.0005)
     criterion = torch.nn.CrossEntropyLoss()
     model = train(dataloaders, model, optimizer, criterion, args, device)
     torch.save(model, f"models/model{time.time()}.pt")
-
-
-        
-        
 
