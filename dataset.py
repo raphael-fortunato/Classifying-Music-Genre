@@ -3,9 +3,8 @@ import numpy as np
 import json
 import torch
 from torch.utils.data import Dataset
-import torchaudio
 from torchvision import transforms
-from sklearn.preprocessing import MinMaxScaler
+
 
 class MusicDataset(Dataset):
     def __init__(self, X, Y, args, transform=None):
@@ -63,7 +62,6 @@ def load_data(data_path):
     z = np.array(data['mapping'])
     return X, y, z
 
-# padding audio files to ensure equal length
 # create dataloaders to train CNN
 def get_dataset(args):
     X_train, Y_train, _ = load_data("train.json")
@@ -71,19 +69,19 @@ def get_dataset(args):
     max = X_train.max()
     min = X_train.min()
     X_std = (X_train - min) / (max - min)
-    X_train = X_std * (1 - -1)  -1
+    X_train = X_std * (1 - 0)  +0
     X_std = (X_test - min) / (max - min)
-    X_test = X_std * (1 - -1)  -1
+    X_test = X_std * (1 - 0)  + 0
     # load dataset
     train_dataset = MusicDataset(X_train, Y_train, args, transform=None)
     valid_dataset = MusicDataset(X_test, Y_test, args, transform=None)
 
     # load dataset
     train_loader = torch.utils.data.DataLoader(
-        train_dataset, batch_size=args.batch_size,
+        train_dataset, batch_size=args.batch_size, shuffle=True,
         num_workers=args.num_workers)
     valid_loader = torch.utils.data.DataLoader(
-        valid_dataset, batch_size=args.batch_size,
+        valid_dataset, batch_size=args.batch_size, shuffle=True,
         num_workers=args.num_workers)
 
     # return dataloaders in dict

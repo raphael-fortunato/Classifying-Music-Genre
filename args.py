@@ -6,7 +6,7 @@ def get_args():
     parser.add_argument(
             '--root',
             type=str,
-            default='SplitDataset/Spectrograms',
+            default='SplitDataset/Audio',
             required=False,
             help='Database directory')
     parser.add_argument(
@@ -40,10 +40,16 @@ def get_args():
             required=False,
             help='number of workser')
     parser.add_argument(
-            '--img_shape',
-            type=int,
-            default=128,
+            '--gamma',
+            type=float,
+            default=.5,
             required=False,
-            help='number of workser')
+            help='lr scheduler gamma')
+    parser.add_argument(
+            '--step_size',
+            type=int,
+            default=15,
+            required=False,
+            help='number of epochs with no improvements before calling step()')
     return parser.parse_args()
 

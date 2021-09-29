@@ -45,7 +45,7 @@ def test_model(args, model, dataloader, criterion, device):
 
     conf_matrix = confusion_matrix(y_true, y_pred)
     heatmap = sns.heatmap(
-        conf_matrix / np.repeat(np.sum(conf_matrix, axis=1),10).reshape((10,10)),
+        conf_matrix / np.repeat(np.sum(conf_matrix, axis=1),args.num_classes).reshape((args.num_classes,args.num_classes)),
         annot=True,
         fmt=".0%",
         cbar=False,
@@ -102,9 +102,11 @@ def train(dataloader, model, optim, criterion, args, device):
             print('{} Loss: {:.4f} Acc: {:.4f}'.format(
                 phase, epoch_loss, epoch_acc))
                 # deep copy the model
-            if phase == 'valid' and epoch_acc > best_acc:
-                best_acc = epoch_acc
-                best_model_wts = copy.deepcopy(model.state_dict())
+            if phase == 'valid':
+                scheduler.step()
+                if epoch_acc > best_acc:
+                    best_acc = epoch_acc
+                    best_model_wts = copy.deepcopy(model.state_dict())
         print()
 
     time_elapsed = time.time() - since
@@ -133,8 +135,13 @@ if __name__ == '__main__':
     model = AudioModel(args)
 
     model.to(device)
-    optimizer = torch.optim.SGD(model.parameters(), lr=0.0001, weight_decay=0.001)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.0001, weight_decay=0.001)
     criterion = torch.nn.CrossEntropyLoss()
+    scheduler = torch.optim.lr_scheduler.StepLR(
+            optimizer,
+            step_size=args.step_size,
+            gamma=args.gamma,
+            verbose=True)
     model = train(dataloaders, model, optimizer, criterion, args, device)
     test = test_model(args, model, dataloaders['valid'], criterion, device)
     torch.save(model, f"models/model{time.time()}.pt")
