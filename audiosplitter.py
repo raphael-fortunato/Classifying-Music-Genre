@@ -8,15 +8,12 @@ import matplotlib.pyplot as plt
 import librosa
 import skimage.io
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import wave
 
 # Get the genres from the dataset
 FOLDER = "./dataset/gtzan/genres_original"
 GENRES      = [name for name in os.listdir(FOLDER) if os.path.isdir(os.path.join(FOLDER, name))]
-NUM_SEGMENTS = 5
-SAMPLE_RATE = 22050
-TRACK_DUR = 30
-SAMPLES_PER_TRACK = SAMPLE_RATE * TRACK_DUR
-SAMPLES_PER_SEGMENT = int(SAMPLES_PER_TRACK / NUM_SEGMENTS)
+DUR_CLIP = 6
 HOP_LENGTH = 512
 N_FTT = 2048
 NUM_MFCC = 13
@@ -76,8 +73,6 @@ def SplitAudioFiles():
             "mfcc": []
         }
 
-        samples_per_segment = int(SAMPLES_PER_TRACK / NUM_SEGMENTS)
-        NUM_MFCC_vectors_per_segment = math.ceil(samples_per_segment / HOP_LENGTH)
          
         json_path = stage+".json"
         dataset_path = "SplitDataset/Audio/"+stage
@@ -98,11 +93,16 @@ def SplitAudioFiles():
 
                     # load audio file
                     file_path = os.path.join(dirpath, f)
-                    signal, sample_rate = librosa.load(file_path, sr=SAMPLE_RATE)
+                    duration = librosa.get_duration(filename=file_path)
+                    signal, sample_rate = librosa.load(file_path)
+
+                    num_segments = int(duration // DUR_CLIP)
+                    samples_per_segment = int((sample_rate * duration) // num_segments)
+                    NUM_MFCC_vectors_per_segment = math.ceil(samples_per_segment / HOP_LENGTH)
                 
                 
                     # process all segments of audio file
-                    for d in range(NUM_SEGMENTS):
+                    for d in range(num_segments):
 
                         # calculate start and finish sample for current segment
                         start = samples_per_segment * d
