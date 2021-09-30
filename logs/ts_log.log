@@ -1,0 +1,729 @@
+2021-09-29 18:16:36,234 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager - Initializing plugins manager...
+2021-09-29 18:16:36,381 [INFO ] main org.pytorch.serve.ModelServer - 
+Torchserve version: 0.4.2
+TS Home: /home/amir/DeploymentJob/lib/python3.9/site-packages
+Current directory: /home/amir/Documents/Projects/Generating-Music-Genre
+Temp directory: /tmp
+Number of GPUs: 1
+Number of CPUs: 8
+Max heap size: 1960 M
+Python executable: /home/amir/DeploymentJob/bin/python
+Config file: N/A
+Inference address: http://127.0.0.1:8080
+Management address: http://127.0.0.1:8081
+Metrics address: http://127.0.0.1:8082
+Model Store: /home/amir/Documents/Projects/Generating-Music-Genre/model_store
+Initial Models: genreclassifier.mar
+Log dir: /home/amir/Documents/Projects/Generating-Music-Genre/logs
+Metrics dir: /home/amir/Documents/Projects/Generating-Music-Genre/logs
+Netty threads: 0
+Netty client threads: 0
+Default workers per model: 1
+Blacklist Regex: N/A
+Maximum Response Size: 6553500
+Maximum Request Size: 6553500
+Prefer direct buffer: false
+Allowed Urls: [file://.*|http(s)?://.*]
+Custom python dependency for model allowed: false
+Metrics report format: prometheus
+Enable metrics API: true
+Workflow Store: /home/amir/Documents/Projects/Generating-Music-Genre/model_store
+Model config: N/A
+2021-09-29 18:16:36,388 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager -  Loading snapshot serializer plugin...
+2021-09-29 18:16:36,416 [INFO ] main org.pytorch.serve.ModelServer - Loading initial models: genreclassifier.mar
+2021-09-29 18:16:36,481 [DEBUG] main org.pytorch.serve.wlm.ModelVersionedRefs - Adding new version 1.0 for model genreclassifier
+2021-09-29 18:16:36,481 [DEBUG] main org.pytorch.serve.wlm.ModelVersionedRefs - Setting default version to 1.0 for model genreclassifier
+2021-09-29 18:16:36,481 [INFO ] main org.pytorch.serve.wlm.ModelManager - Model genreclassifier loaded.
+2021-09-29 18:16:36,481 [DEBUG] main org.pytorch.serve.wlm.ModelManager - updateModel: genreclassifier, count: 1
+2021-09-29 18:16:36,493 [INFO ] main org.pytorch.serve.ModelServer - Initialize Inference server with: EpollServerSocketChannel.
+2021-09-29 18:16:36,575 [INFO ] main org.pytorch.serve.ModelServer - Inference API bind to: http://127.0.0.1:8080
+2021-09-29 18:16:36,575 [INFO ] main org.pytorch.serve.ModelServer - Initialize Management server with: EpollServerSocketChannel.
+2021-09-29 18:16:36,576 [INFO ] main org.pytorch.serve.ModelServer - Management API bind to: http://127.0.0.1:8081
+2021-09-29 18:16:36,577 [INFO ] main org.pytorch.serve.ModelServer - Initialize Metrics server with: EpollServerSocketChannel.
+2021-09-29 18:16:36,577 [INFO ] main org.pytorch.serve.ModelServer - Metrics API bind to: http://127.0.0.1:8082
+2021-09-29 18:16:36,773 [WARN ] pool-2-thread-1 org.pytorch.serve.metrics.MetricCollector - worker pid is not available yet.
+2021-09-29 18:16:37,135 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change null -> WORKER_STARTED
+2021-09-29 18:16:37,138 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:16:37,962 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:16:37,963 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:16:37,963 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:16:37,964 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:16:37,965 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:16:37,965 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:37,965 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:37,965 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1 seconds.
+2021-09-29 18:16:37,978 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:37,978 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:39,510 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:16:39,511 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:16:39,605 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:16:39,605 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:16:39,605 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:16:39,606 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:16:39,606 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:16:39,606 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:39,606 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:39,606 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1 seconds.
+2021-09-29 18:16:39,606 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:39,617 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:41,140 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:16:41,140 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:16:41,243 [INFO ] epollEventLoopGroup-5-3 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:16:41,243 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:16:41,243 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:16:41,244 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:16:41,244 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:16:41,244 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:41,245 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:41,245 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 2 seconds.
+2021-09-29 18:16:41,245 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:41,255 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:43,773 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:16:43,774 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:16:43,878 [INFO ] epollEventLoopGroup-5-4 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:16:43,878 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:16:43,878 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:16:43,879 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:16:43,879 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:16:43,879 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:43,879 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:43,879 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 3 seconds.
+2021-09-29 18:16:43,879 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:43,890 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:47,417 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:16:47,417 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:16:47,521 [INFO ] epollEventLoopGroup-5-5 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:16:47,521 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:16:47,521 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:16:47,521 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:16:47,521 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:16:47,521 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:47,522 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:47,522 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:47,522 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 5 seconds.
+2021-09-29 18:16:47,532 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:53,068 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:16:53,068 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:16:53,172 [INFO ] epollEventLoopGroup-5-6 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:16:53,172 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:16:53,172 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:16:53,172 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:16:53,173 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:16:53,173 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:16:53,173 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:53,173 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 8 seconds.
+2021-09-29 18:16:53,173 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:16:53,185 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:17:01,715 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:17:01,715 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:17:01,806 [INFO ] epollEventLoopGroup-5-7 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:17:01,807 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:17:01,807 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:17:01,807 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:17:01,807 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:17:01,807 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:17:01,807 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 13 seconds.
+2021-09-29 18:17:01,818 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:17:15,391 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:17:15,392 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:17:15,500 [INFO ] epollEventLoopGroup-5-8 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:17:15,500 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:17:15,500 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:17:15,500 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:17:15,500 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:17:15,501 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:17:15,501 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:17:15,501 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 21 seconds.
+2021-09-29 18:17:15,501 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:17:15,513 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:17:37,075 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:17:37,075 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:17:37,179 [INFO ] epollEventLoopGroup-5-9 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:17:37,180 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:17:37,180 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:17:37,180 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:17:37,180 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:17:37,181 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:17:37,181 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:17:37,181 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 34 seconds.
+2021-09-29 18:17:37,181 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:17:37,192 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:18:11,724 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:18:11,724 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:18:11,826 [INFO ] epollEventLoopGroup-5-10 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:18:11,826 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:18:11,826 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:18:11,827 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:18:11,827 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:18:11,827 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:18:11,827 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:18:11,827 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 55 seconds.
+2021-09-29 18:18:11,827 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:18:11,838 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:19:07,382 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:19:07,382 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:19:07,490 [INFO ] epollEventLoopGroup-5-11 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:19:07,490 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:19:07,490 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:19:07,491 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:19:07,491 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:19:07,491 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:19:07,491 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:19:07,491 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:19:07,491 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 89 seconds.
+2021-09-29 18:19:07,503 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:20:36,384 [INFO ] epollEventLoopGroup-2-1 org.pytorch.serve.ModelServer - Inference model server stopped.
+2021-09-29 18:20:36,385 [INFO ] epollEventLoopGroup-2-2 org.pytorch.serve.ModelServer - Management model server stopped.
+2021-09-29 18:20:36,385 [INFO ] epollEventLoopGroup-2-1 org.pytorch.serve.ModelServer - Metrics model server stopped.
+2021-09-29 18:20:37,079 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:20:37,079 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:20:37,193 [INFO ] epollEventLoopGroup-5-12 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:20:37,194 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:20:37,194 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:20:37,194 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:20:37,194 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:20:37,194 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:20:37,194 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 144 seconds.
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:20:37,206 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:20:38,394 [INFO ] main org.pytorch.serve.ModelServer - Torchserve stopped.
+2021-09-29 18:20:38,397 [INFO ] Thread-0 org.pytorch.serve.ModelServer - Unregistering model genreclassifier version 1.0
+2021-09-29 18:20:38,397 [DEBUG] Thread-0 org.pytorch.serve.wlm.ModelVersionedRefs - Removed model: genreclassifier version: 1.0
+2021-09-29 18:20:38,397 [DEBUG] Thread-0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_SCALED_DOWN
+2021-09-29 18:20:38,397 [WARN ] Thread-0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:20:38,397 [WARN ] Thread-0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:20:38,398 [INFO ] Thread-0 org.pytorch.serve.wlm.ModelManager - Model genreclassifier unregistered.
+2021-09-29 18:20:53,689 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager - Initializing plugins manager...
+2021-09-29 18:20:53,834 [INFO ] main org.pytorch.serve.ModelServer - 
+Torchserve version: 0.4.2
+TS Home: /home/amir/DeploymentJob/lib/python3.9/site-packages
+Current directory: /home/amir/Documents/Projects/Generating-Music-Genre
+Temp directory: /tmp
+Number of GPUs: 1
+Number of CPUs: 8
+Max heap size: 1960 M
+Python executable: /home/amir/DeploymentJob/bin/python
+Config file: N/A
+Inference address: http://127.0.0.1:8080
+Management address: http://127.0.0.1:8081
+Metrics address: http://127.0.0.1:8082
+Model Store: /home/amir/Documents/Projects/Generating-Music-Genre/model_store
+Initial Models: genreclassifier.mar
+Log dir: /home/amir/Documents/Projects/Generating-Music-Genre/logs
+Metrics dir: /home/amir/Documents/Projects/Generating-Music-Genre/logs
+Netty threads: 0
+Netty client threads: 0
+Default workers per model: 1
+Blacklist Regex: N/A
+Maximum Response Size: 6553500
+Maximum Request Size: 6553500
+Prefer direct buffer: false
+Allowed Urls: [file://.*|http(s)?://.*]
+Custom python dependency for model allowed: false
+Metrics report format: prometheus
+Enable metrics API: true
+Workflow Store: /home/amir/Documents/Projects/Generating-Music-Genre/model_store
+Model config: N/A
+2021-09-29 18:20:53,841 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager -  Loading snapshot serializer plugin...
+2021-09-29 18:20:53,867 [INFO ] main org.pytorch.serve.ModelServer - Loading initial models: genreclassifier.mar
+2021-09-29 18:20:53,924 [DEBUG] main org.pytorch.serve.wlm.ModelVersionedRefs - Adding new version 1.0 for model genreclassifier
+2021-09-29 18:20:53,924 [DEBUG] main org.pytorch.serve.wlm.ModelVersionedRefs - Setting default version to 1.0 for model genreclassifier
+2021-09-29 18:20:53,924 [INFO ] main org.pytorch.serve.wlm.ModelManager - Model genreclassifier loaded.
+2021-09-29 18:20:53,924 [DEBUG] main org.pytorch.serve.wlm.ModelManager - updateModel: genreclassifier, count: 1
+2021-09-29 18:20:53,936 [INFO ] main org.pytorch.serve.ModelServer - Initialize Inference server with: EpollServerSocketChannel.
+2021-09-29 18:20:54,014 [INFO ] main org.pytorch.serve.ModelServer - Inference API bind to: http://127.0.0.1:8080
+2021-09-29 18:20:54,014 [INFO ] main org.pytorch.serve.ModelServer - Initialize Management server with: EpollServerSocketChannel.
+2021-09-29 18:20:54,015 [INFO ] main org.pytorch.serve.ModelServer - Management API bind to: http://127.0.0.1:8081
+2021-09-29 18:20:54,015 [INFO ] main org.pytorch.serve.ModelServer - Initialize Metrics server with: EpollServerSocketChannel.
+2021-09-29 18:20:54,016 [INFO ] main org.pytorch.serve.ModelServer - Metrics API bind to: http://127.0.0.1:8082
+2021-09-29 18:20:54,191 [WARN ] pool-2-thread-1 org.pytorch.serve.metrics.MetricCollector - worker pid is not available yet.
+2021-09-29 18:20:54,528 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change null -> WORKER_STARTED
+2021-09-29 18:20:54,532 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:20:54,666 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:20:54,666 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:20:54,667 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:20:54,668 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:20:54,668 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:20:54,669 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:20:54,669 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:20:54,669 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1 seconds.
+2021-09-29 18:20:54,681 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:20:54,681 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:20:56,203 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:20:56,203 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:20:56,308 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:20:56,308 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:20:56,309 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:20:56,309 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:20:56,309 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:20:56,309 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:20:56,309 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:20:56,309 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1 seconds.
+2021-09-29 18:20:56,309 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:20:56,320 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:20:57,837 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:20:57,838 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:20:57,944 [INFO ] epollEventLoopGroup-5-3 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:20:57,944 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:20:57,945 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:20:57,945 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:20:57,945 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:20:57,945 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:20:57,945 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:20:57,946 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:20:57,946 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 2 seconds.
+2021-09-29 18:20:57,956 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:00,482 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:21:00,482 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:21:00,588 [INFO ] epollEventLoopGroup-5-4 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:21:00,588 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:21:00,588 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:21:00,588 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:21:00,588 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:21:00,589 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:00,589 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:00,589 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 3 seconds.
+2021-09-29 18:21:00,589 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:00,599 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:04,130 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:21:04,130 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:21:04,220 [INFO ] epollEventLoopGroup-5-5 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:21:04,220 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:21:04,220 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:21:04,221 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:21:04,221 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:21:04,221 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:04,221 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:04,221 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 5 seconds.
+2021-09-29 18:21:04,221 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:04,233 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:09,759 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:21:09,759 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:21:09,865 [INFO ] epollEventLoopGroup-5-6 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:21:09,865 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:21:09,865 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:21:09,865 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:21:09,865 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:21:09,866 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:09,866 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:09,866 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:09,866 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 8 seconds.
+2021-09-29 18:21:09,876 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:18,402 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:21:18,402 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:21:18,490 [INFO ] epollEventLoopGroup-5-7 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:21:18,490 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:21:18,490 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:21:18,491 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:21:18,491 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:21:18,491 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:18,491 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:18,491 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 13 seconds.
+2021-09-29 18:21:18,491 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:18,503 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:32,031 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:21:32,031 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:21:32,134 [INFO ] epollEventLoopGroup-5-8 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:21:32,134 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:21:32,134 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:21:32,135 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:21:32,135 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:21:32,135 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:32,135 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:32,135 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 21 seconds.
+2021-09-29 18:21:32,135 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:32,146 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:53,678 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:21:53,678 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:21:53,775 [INFO ] epollEventLoopGroup-5-9 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:21:53,775 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:21:53,776 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:21:53,776 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:21:53,776 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:21:53,776 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:21:53,776 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:53,776 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 34 seconds.
+2021-09-29 18:21:53,776 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:21:53,788 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:22:28,301 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:22:28,301 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:22:28,406 [INFO ] epollEventLoopGroup-5-10 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:22:28,407 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:22:28,407 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:22:28,407 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:22:28,407 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:22:28,407 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:22:28,407 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 55 seconds.
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:22:28,417 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:23:23,913 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:23:23,913 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:23:24,012 [INFO ] epollEventLoopGroup-5-11 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:23:24,013 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:23:24,013 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:23:24,013 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:23:24,013 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:23:24,013 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:23:24,013 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 89 seconds.
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:23:24,023 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:24:53,624 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-29 18:24:53,634 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-29 18:24:53,737 [INFO ] epollEventLoopGroup-5-12 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-29 18:24:53,737 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-29 18:24:53,737 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-29 18:24:53,738 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-29 18:24:53,738 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-29 18:24:53,738 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-29 18:24:53,738 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:24:53,738 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 144 seconds.
+2021-09-29 18:24:53,738 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-29 18:24:53,748 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-30 10:49:31,732 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-30 10:49:31,974 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-30 10:49:34,971 [INFO ] epollEventLoopGroup-5-13 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-30 10:49:35,064 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-30 10:49:35,064 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-30 10:49:35,066 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-30 10:49:35,066 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-30 10:49:35,066 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-30 10:49:35,066 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-30 10:49:35,067 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 233 seconds.
+2021-09-30 10:49:35,076 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-30 10:49:35,076 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-30 10:53:31,481 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-30 10:53:31,483 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-30 10:53:31,948 [INFO ] epollEventLoopGroup-5-14 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-30 10:53:31,949 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-30 10:53:31,949 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-30 10:53:31,949 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-30 10:53:31,949 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-30 10:53:31,950 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-30 10:53:31,950 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-30 10:53:31,950 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-30 10:53:31,950 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 377 seconds.
+2021-09-30 10:53:31,961 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-30 10:59:49,473 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-30 10:59:49,473 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-30 10:59:49,575 [INFO ] epollEventLoopGroup-5-15 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-30 10:59:49,575 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-30 10:59:49,575 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-30 10:59:49,575 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-30 10:59:49,575 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-30 10:59:49,576 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-30 10:59:49,576 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-30 10:59:49,576 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 610 seconds.
+2021-09-30 10:59:49,578 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-30 10:59:49,589 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-30 11:10:00,107 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-30 11:10:00,107 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-30 11:10:00,208 [INFO ] epollEventLoopGroup-5-16 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-30 11:10:00,208 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-30 11:10:00,208 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-30 11:10:00,208 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-30 11:10:00,209 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-30 11:10:00,209 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-30 11:10:00,209 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-30 11:10:00,209 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 987 seconds.
+2021-09-30 11:10:00,209 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-30 11:10:00,227 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-30 11:26:26,692 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-30 11:26:26,692 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-30 11:26:26,773 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-30 11:26:26,773 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-30 11:26:26,773 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-30 11:26:26,773 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-30 11:26:26,773 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-30 11:26:26,774 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-30 11:26:26,774 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-30 11:26:26,774 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-30 11:26:26,774 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1597 seconds.
+2021-09-30 11:26:26,785 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-30 11:53:04,280 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-30 11:53:04,280 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-30 11:53:04,349 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-30 11:53:04,350 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-30 11:53:04,350 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-30 11:53:04,350 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-30 11:53:04,350 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-30 11:53:04,350 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-30 11:53:04,350 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-30 11:53:04,351 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1597 seconds.
+2021-09-30 11:53:04,361 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-30 12:19:41,881 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-30 12:19:41,881 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-30 12:19:41,952 [INFO ] epollEventLoopGroup-5-3 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-30 12:19:41,952 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-30 12:19:41,952 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-30 12:19:41,952 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-30 12:19:41,953 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-30 12:19:41,953 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-30 12:19:41,953 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-30 12:19:41,953 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1597 seconds.
+2021-09-30 12:19:41,953 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-30 12:19:41,966 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-30 12:46:19,486 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-30 12:46:19,487 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-30 12:46:19,572 [INFO ] epollEventLoopGroup-5-4 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-30 12:46:19,572 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-30 12:46:19,572 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-30 12:46:19,572 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-30 12:46:19,572 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-30 12:46:19,572 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-30 12:46:19,572 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-30 12:46:19,573 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1597 seconds.
+2021-09-30 12:46:19,584 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
+2021-09-30 13:12:57,080 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STOPPED -> WORKER_STARTED
+2021-09-30 13:12:57,080 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Connecting to: /tmp/.ts.sock.9000
+2021-09-30 13:12:57,163 [INFO ] epollEventLoopGroup-5-5 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2021-09-30 13:12:57,163 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - System state is : WORKER_STARTED
+2021-09-30 13:12:57,163 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Backend worker monitoring thread interrupted or backend worker process died.
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1668)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:435)
+	at org.pytorch.serve.wlm.WorkerThread.run(WorkerThread.java:188)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-30 13:12:57,164 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.BatchAggregator - Load model failed: genreclassifier, error: Worker died.
+2021-09-30 13:12:57,164 [DEBUG] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - W-9000-genreclassifier_1.0 State change WORKER_STARTED -> WORKER_STOPPED
+2021-09-30 13:12:57,164 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stderr
+2021-09-30 13:12:57,164 [INFO ] W-9000-genreclassifier_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stdout
+2021-09-30 13:12:57,164 [WARN ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-genreclassifier_1.0-stdout
+2021-09-30 13:12:57,166 [INFO ] W-9000-genreclassifier_1.0 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1597 seconds.
+2021-09-30 13:12:57,174 [INFO ] W-9000-genreclassifier_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-genreclassifier_1.0-stderr
