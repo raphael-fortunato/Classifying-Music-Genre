@@ -13,6 +13,7 @@ plt.style.use('seaborn-darkgrid')
 from args import get_args
 from dataset import get_dataset
 from model import AudioModel, ResNet
+from deployment.bentoservice import GenreClassification
 
 def test_model(args, model, dataloader, criterion, device):
     model.eval()
@@ -138,15 +139,14 @@ if __name__ == '__main__':
     model = train(dataloaders, model, optimizer, criterion, args, device)
 
     test = test_model(args, model, dataloaders['valid'], criterion, device)
-    torch.save(model, f"models/model{time.time()}.pt")
+    torch.save(model, 'models/deployment_model.pt')
 
     # Create a iris classifier service instance
     genre_classifier = GenreClassification()
 
     # Pack the newly trained model artifact
-    genre_classifier .pack('model', model)
+    genre_classifier.pack('model', model)
 
     # Save the prediction service to disk for model serving
-    saved_path =iris_classifier_service.save()
+    saved_path = genre_classifier.save()
     print('packaged model saved at: ', saved_path)
-

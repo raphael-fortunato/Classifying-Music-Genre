@@ -35,15 +35,3 @@ class AudioModel(nn.Module):
         return x
 
 
-class ResNet(nn.Module):
-    def __init__(self, args, pretrained=True):
-        super(ResNet, self).__init__()
-        self.model = models.resnet18(pretrained)
-        num_ftrs = self.model.fc.in_features
-        self.model.fc = nn.Linear(num_ftrs, args.num_classes)
-		
-    def forward(self, x):
-        output = self.model(x)
-        return output
-
-

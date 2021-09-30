@@ -1,0 +1,624 @@
+2021-09-29 18:16:37,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:16:37,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148379
+2021-09-29 18:16:37,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:16:37,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:16:37,148 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:16:37,183 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:16:37,961 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:16:37,961 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:16:37,961 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:16:37,962 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:16:37,962 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:16:37,962 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:16:37,962 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:16:37,962 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:16:37,963 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:16:37,963 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:16:37,963 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:16:37,963 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:16:37,963 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-29 18:16:37,964 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.model = self._load_pickled_model(model_dir, model_file, model_pt_path)
+2021-09-29 18:16:37,964 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 120, in _load_pickled_model
+2021-09-29 18:16:37,964 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     raise ValueError(
+2021-09-29 18:16:37,964 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - ValueError: Expected only one class as model definition. [<class 'model.AudioModel'>, <class 'model.ResNet'>]
+2021-09-29 18:16:39,510 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:16:39,510 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148416
+2021-09-29 18:16:39,510 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:16:39,510 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:16:39,512 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:16:39,531 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:16:39,605 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:16:39,605 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:16:39,605 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:16:39,605 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:16:39,605 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:16:39,606 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:16:39,606 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:16:39,606 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:16:39,606 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:16:39,606 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:16:39,606 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:16:41,139 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:16:41,139 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148435
+2021-09-29 18:16:41,139 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:16:41,140 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:16:41,141 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:16:41,160 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:16:41,243 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:16:41,243 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:16:41,243 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:16:41,243 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:16:41,243 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:16:41,243 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:16:41,243 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:16:41,244 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:16:41,244 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:16:41,244 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:16:41,244 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:16:41,245 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:16:43,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:16:43,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148447
+2021-09-29 18:16:43,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:16:43,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:16:43,775 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:16:43,792 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:16:43,878 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:16:43,878 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:16:43,878 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:16:43,878 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:16:43,879 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:16:43,879 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:16:43,879 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:16:43,879 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:16:43,879 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:16:43,879 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:16:43,879 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:16:47,416 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:16:47,417 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148462
+2021-09-29 18:16:47,417 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:16:47,417 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:16:47,419 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:16:47,437 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:16:47,520 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:16:47,521 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:16:47,521 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:16:47,521 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:16:47,521 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:16:47,521 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:16:47,521 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:16:47,522 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:16:47,522 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:16:53,068 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:16:53,068 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148480
+2021-09-29 18:16:53,068 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:16:53,068 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:16:53,069 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:16:53,087 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:16:53,172 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:16:53,172 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:16:53,172 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:16:53,172 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:16:53,172 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:16:53,172 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:16:53,172 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:16:53,172 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:16:53,173 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:16:53,173 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:16:53,173 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:16:53,173 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:17:01,714 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:17:01,714 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148496
+2021-09-29 18:17:01,714 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:17:01,715 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:17:01,716 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:17:01,736 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:17:01,806 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:17:01,806 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:17:01,806 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:17:01,807 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-29 18:17:15,391 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:17:15,391 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148545
+2021-09-29 18:17:15,391 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:17:15,392 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:17:15,393 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:17:15,412 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:17:15,499 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:17:15,500 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:17:15,500 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:17:15,500 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:17:15,500 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:17:15,500 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:17:15,500 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:17:15,500 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:17:15,500 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:17:15,500 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:17:15,500 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:17:15,501 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:17:15,501 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-29 18:17:37,074 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:17:37,074 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148565
+2021-09-29 18:17:37,075 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:17:37,075 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:17:37,076 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:17:37,095 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:17:37,179 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:17:37,179 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:17:37,180 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:17:37,180 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:17:37,180 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:17:37,180 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:17:37,180 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:17:37,180 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:17:37,180 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:17:37,180 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:17:37,180 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:17:37,181 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:18:11,723 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:18:11,723 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148638
+2021-09-29 18:18:11,724 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:18:11,724 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:18:11,725 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:18:11,743 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:18:11,826 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:18:11,826 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:18:11,826 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:18:11,826 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:18:11,826 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:18:11,827 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:18:11,827 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:18:11,827 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:18:11,827 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:18:11,827 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:18:11,827 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:18:11,827 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:19:07,381 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:19:07,382 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148683
+2021-09-29 18:19:07,382 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:19:07,382 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:19:07,384 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:19:07,402 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:19:07,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:19:07,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:19:07,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:19:07,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:19:07,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:19:07,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:19:07,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:19:07,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:19:07,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:19:07,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:19:07,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:19:07,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:19:07,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-29 18:19:07,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.model = self._load_pickled_model(model_dir, model_file, model_pt_path)
+2021-09-29 18:19:07,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 120, in _load_pickled_model
+2021-09-29 18:19:07,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     raise ValueError(
+2021-09-29 18:19:07,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - ValueError: Expected only one class as model definition. [<class 'model.AudioModel'>, <class 'model.ResNet'>]
+2021-09-29 18:20:37,078 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:20:37,079 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]148971
+2021-09-29 18:20:37,079 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:20:37,079 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:20:37,080 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:20:37,099 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:20:37,193 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:20:37,193 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:20:37,193 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:20:37,194 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:20:54,528 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:20:54,528 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149029
+2021-09-29 18:20:54,528 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:20:54,528 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:20:54,542 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:20:54,578 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:20:54,665 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:20:54,665 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:20:54,665 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:20:54,665 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:20:54,665 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:20:54,666 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:20:54,666 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:20:54,666 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:20:54,666 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:20:54,666 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:20:54,666 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:20:54,667 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:20:54,667 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-29 18:20:54,667 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.model = self._load_pickled_model(model_dir, model_file, model_pt_path)
+2021-09-29 18:20:54,667 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 127, in _load_pickled_model
+2021-09-29 18:20:54,667 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     model = model_class()
+2021-09-29 18:20:54,668 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - TypeError: __init__() missing 1 required positional argument: 'args'
+2021-09-29 18:20:56,202 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:20:56,202 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149060
+2021-09-29 18:20:56,203 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:20:56,203 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:20:56,204 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:20:56,223 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:20:56,308 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:20:56,308 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:20:56,308 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:20:56,308 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:20:56,308 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:20:56,309 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:20:56,309 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:20:56,309 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:20:56,309 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:20:56,309 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:20:56,309 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:20:56,309 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:20:57,837 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:20:57,837 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149072
+2021-09-29 18:20:57,837 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:20:57,837 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:20:57,839 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:20:57,857 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:20:57,944 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:20:57,944 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:20:57,944 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:20:57,945 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:20:57,945 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:20:57,945 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:20:57,945 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:20:57,945 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:20:57,945 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:20:57,945 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:20:57,945 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:21:00,481 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:21:00,482 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149086
+2021-09-29 18:21:00,482 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:21:00,482 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:21:00,483 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:21:00,504 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:21:00,587 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:21:00,588 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:21:00,588 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:21:00,588 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:21:00,588 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:21:00,588 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:21:00,588 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:21:00,589 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:21:00,589 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:21:00,589 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:21:00,589 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:21:04,130 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:21:04,130 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149099
+2021-09-29 18:21:04,130 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:21:04,130 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:21:04,132 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:21:04,151 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:21:04,220 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:21:04,220 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:21:04,220 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:21:04,220 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:21:04,220 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:21:04,220 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:21:04,220 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:21:04,220 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:21:04,221 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:21:04,221 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:21:04,221 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:21:04,221 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:21:09,758 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:21:09,758 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149116
+2021-09-29 18:21:09,758 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:21:09,759 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:21:09,760 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:21:09,779 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:21:09,864 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:21:09,864 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:21:09,865 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:21:09,865 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:21:09,865 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:21:09,865 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:21:09,865 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:21:09,865 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:21:09,865 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:21:09,866 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:21:09,866 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:21:18,401 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:21:18,401 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149136
+2021-09-29 18:21:18,402 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:21:18,402 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:21:18,403 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:21:18,420 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:21:18,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:21:18,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:21:18,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:21:18,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:21:18,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:21:18,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:21:18,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:21:18,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:21:18,490 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:21:18,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:21:18,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:21:18,491 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:21:32,031 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:21:32,031 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149154
+2021-09-29 18:21:32,031 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:21:32,031 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:21:32,032 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:21:32,052 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:21:32,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:21:32,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:21:32,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:21:32,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:21:32,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:21:32,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:21:32,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:21:32,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:21:32,134 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:21:32,135 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:21:32,135 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:21:32,135 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:21:32,135 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-29 18:21:53,678 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:21:53,678 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149182
+2021-09-29 18:21:53,678 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:21:53,678 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:21:53,679 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:21:53,700 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:21:53,775 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:21:53,775 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:21:53,775 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:21:53,775 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:21:53,776 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:21:53,776 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:21:53,776 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:21:53,776 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:21:53,776 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:21:53,776 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:21:53,776 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:21:53,776 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:22:28,301 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:22:28,301 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149251
+2021-09-29 18:22:28,301 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:22:28,301 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:22:28,302 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:22:28,321 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:22:28,406 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:22:28,406 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:22:28,406 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:22:28,407 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:23:23,913 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:23:23,913 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]149503
+2021-09-29 18:23:23,913 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:23:23,913 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:23:23,915 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:23:23,933 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:23:24,012 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:23:24,012 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:23:24,012 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:23:24,013 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:24:53,612 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-29 18:24:53,624 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]153893
+2021-09-29 18:24:53,624 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-29 18:24:53,624 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-29 18:24:53,635 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-29 18:24:53,651 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-29 18:24:53,737 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-29 18:24:53,737 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-29 18:24:53,737 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-29 18:24:53,737 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-29 18:24:53,737 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-29 18:24:53,737 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-29 18:24:53,737 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-29 18:24:53,737 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-29 18:24:53,737 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-29 18:24:53,737 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-29 18:24:53,738 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-29 18:24:53,738 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-29 18:24:53,738 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-29 18:24:53,738 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.model = self._load_pickled_model(model_dir, model_file, model_pt_path)
+2021-09-30 10:49:31,663 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-30 10:49:31,730 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]156214
+2021-09-30 10:49:31,731 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-30 10:49:31,731 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-30 10:49:32,280 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-30 10:49:32,514 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-30 10:49:34,959 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-30 10:49:34,960 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-30 10:49:34,961 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-30 10:49:34,961 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-30 10:49:34,961 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-30 10:49:34,961 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-30 10:49:34,961 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-30 10:49:34,961 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-30 10:49:34,962 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-30 10:49:34,962 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-30 10:49:34,962 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-30 10:49:34,963 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-30 10:49:34,963 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-30 10:49:34,963 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.model = self._load_pickled_model(model_dir, model_file, model_pt_path)
+2021-09-30 10:49:34,964 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 127, in _load_pickled_model
+2021-09-30 10:49:34,964 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     model = model_class()
+2021-09-30 10:49:34,964 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - TypeError: __init__() missing 1 required positional argument: 'args'
+2021-09-30 10:53:31,479 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-30 10:53:31,480 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]156597
+2021-09-30 10:53:31,480 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-30 10:53:31,481 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-30 10:53:31,485 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-30 10:53:31,528 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-30 10:53:31,948 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-30 10:53:31,948 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-30 10:53:31,948 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-30 10:53:31,948 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-30 10:53:31,949 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-30 10:53:31,949 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-30 10:53:31,949 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-30 10:53:31,949 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-30 10:53:31,949 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-30 10:53:31,949 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-30 10:53:31,949 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-30 10:53:31,950 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-30 10:53:31,950 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-30 10:59:49,472 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-30 10:59:49,473 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]156825
+2021-09-30 10:59:49,473 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-30 10:59:49,473 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-30 10:59:49,474 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-30 10:59:49,492 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-30 10:59:49,575 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-30 10:59:49,576 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-30 11:10:00,106 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-30 11:10:00,106 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]157466
+2021-09-30 11:10:00,107 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-30 11:10:00,107 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-30 11:10:00,114 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-30 11:10:00,115 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-30 11:10:00,207 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-30 11:10:00,208 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-30 11:10:00,208 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-30 11:10:00,208 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-30 11:10:00,208 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-30 11:10:00,208 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-30 11:10:00,208 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-30 11:10:00,208 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-30 11:10:00,208 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-30 11:10:00,208 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-30 11:10:00,209 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-30 11:10:00,209 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-30 11:26:26,691 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-30 11:26:26,692 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]157857
+2021-09-30 11:26:26,692 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-30 11:26:26,692 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-30 11:26:26,693 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-30 11:26:26,694 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-30 11:26:26,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-30 11:26:26,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-30 11:26:26,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-30 11:26:26,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-30 11:26:26,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-30 11:26:26,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-30 11:26:26,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-30 11:26:26,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-30 11:26:26,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-30 11:26:26,773 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-30 11:26:26,774 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-30 11:53:04,280 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-30 11:53:04,280 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]159032
+2021-09-30 11:53:04,280 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-30 11:53:04,280 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-30 11:53:04,281 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-30 11:53:04,282 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-30 11:53:04,349 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-30 11:53:04,349 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.model = self._load_pickled_model(model_dir, model_file, model_pt_path)
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 127, in _load_pickled_model
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     model = model_class()
+2021-09-30 11:53:04,350 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - TypeError: __init__() missing 1 required positional argument: 'args'
+2021-09-30 12:19:41,880 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-30 12:19:41,880 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]159740
+2021-09-30 12:19:41,880 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-30 12:19:41,881 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-30 12:19:41,882 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-30 12:19:41,882 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-30 12:19:41,952 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-30 12:19:41,952 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-30 12:19:41,952 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-30 12:19:41,952 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-30 12:19:41,952 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-30 12:19:41,952 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-30 12:19:41,952 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-30 12:19:41,952 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-30 12:19:41,953 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-30 12:19:41,953 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-30 12:19:41,953 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-30 12:19:41,953 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-30 12:46:19,486 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-30 12:46:19,486 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]161086
+2021-09-30 12:46:19,486 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-30 12:46:19,486 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-30 12:46:19,488 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-30 12:46:19,489 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-30 12:46:19,571 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-30 12:46:19,571 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.model = self._load_pickled_model(model_dir, model_file, model_pt_path)
+2021-09-30 12:46:19,572 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 127, in _load_pickled_model
+2021-09-30 13:12:57,079 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Listening on port: /tmp/.ts.sock.9000
+2021-09-30 13:12:57,079 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - [PID]161646
+2021-09-30 13:12:57,080 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Torch worker started.
+2021-09-30 13:12:57,080 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Python runtime: 3.9.7
+2021-09-30 13:12:57,081 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Connection accepted: /tmp/.ts.sock.9000.
+2021-09-30 13:12:57,081 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - model_name: genreclassifier, batchSize: 1
+2021-09-30 13:12:57,163 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Backend worker process died.
+2021-09-30 13:12:57,163 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2021-09-30 13:12:57,163 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 183, in <module>
+2021-09-30 13:12:57,163 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     worker.run_server()
+2021-09-30 13:12:57,163 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 155, in run_server
+2021-09-30 13:12:57,163 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2021-09-30 13:12:57,163 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 117, in handle_connection
+2021-09-30 13:12:57,163 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2021-09-30 13:12:57,163 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_service_worker.py", line 90, in load_model
+2021-09-30 13:12:57,164 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2021-09-30 13:12:57,164 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/model_loader.py", line 110, in load
+2021-09-30 13:12:57,164 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2021-09-30 13:12:57,164 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 66, in initialize
+2021-09-30 13:12:57,164 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     self.model = self._load_pickled_model(model_dir, model_file, model_pt_path)
+2021-09-30 13:12:57,164 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -   File "/home/amir/DeploymentJob/lib/python3.9/site-packages/ts/torch_handler/base_handler.py", line 127, in _load_pickled_model
+2021-09-30 13:12:57,164 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG -     model = model_class()
+2021-09-30 13:12:57,164 [INFO ] W-9000-genreclassifier_1.0-stdout MODEL_LOG - TypeError: __init__() missing 1 required positional argument: 'args'
