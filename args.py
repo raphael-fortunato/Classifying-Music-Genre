@@ -48,7 +48,7 @@ def get_args():
     parser.add_argument(
             '--step_size',
             type=int,
-            default=15,
+            default=20,
             required=False,
             help='number of epochs with no improvements before calling step()')
     return parser.parse_args()

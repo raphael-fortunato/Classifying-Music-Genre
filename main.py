@@ -135,7 +135,7 @@ if __name__ == '__main__':
     model = AudioModel(args)
 
     model.to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.0001, weight_decay=0.001)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.0001, weight_decay=0.0005)
     criterion = torch.nn.CrossEntropyLoss()
     scheduler = torch.optim.lr_scheduler.StepLR(
             optimizer,
